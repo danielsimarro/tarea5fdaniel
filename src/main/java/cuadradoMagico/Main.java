@@ -15,6 +15,9 @@ public class Main {
         
         cm1.imprimirMatriz();
         
-        System.out.println("La suma de la fila es: " + cm1.sumaFila(0));
+        System.out.println("La suma de la fila es: " + cm1.sumaFila(2));
+        
+        System.out.println("La suma de la columna es: " + cm1.sumarColumna(2));
     }
+    
 }

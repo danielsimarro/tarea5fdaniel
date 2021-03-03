@@ -12,46 +12,70 @@ import java.util.Random;
  * @author NitroPc
  */
 public class CuadradoMagico {
-    
-    private int [][] matriz = new int [3][3];
 
+    //Atributo matiz inicilizado con un tamaño de 3x3
+    private int[][] matriz = new int[3][3];
+
+    //Constructor sin parametros rellenando la matiz con numero aleatorios del 1 al 9
     public CuadradoMagico() {
-        
-        for(int i = 0;i<this.matriz.length;i++){
-            for(int j = 0; j<this.matriz[i].length;j++){
-                matriz[i][j]=numeroAleatorio();
+
+        for (int i = 0; i < this.matriz.length; i++) {
+            for (int j = 0; j < this.matriz[i].length; j++) {
+                matriz[i][j] = numeroAleatorio();
             }
         }
-        
+
     }
-    
-    public static int numeroAleatorio(){
-        
+
+    //Metodo para generar numeros aleatorido del 1-9
+    public static int numeroAleatorio() {
+
         Random aleatorio = new Random();
-        
-        return aleatorio.nextInt(9-1+1)+1;
+
+        return aleatorio.nextInt(9 - 1 + 1) + 1;
+    }
+
+    //Metodo para sumar la fila indicada de la matriz
+    public int sumaFila(int fila) {
+
+        if (fila >= 0 && fila < 3) {
+
+            int suma = 0;
+
+            for (int i = 0; i < this.matriz[fila].length; i++) {
+                suma += matriz[fila][i];
+            }
+
+            return suma;
+
+        }
+
+        return 0;
     }
     
-    public int sumaFila(int fila){
-        
-        if(fila>=0 && fila<matriz.length){
+    //Metodo para sumar la columna indcada de la matriz
+    public int sumarColumna(int columna){
+    
+        if(columna >= 0 && columna < 3){
+           
+            int suma = 0;
             
-        int suma = 0;
-        
-        for(int i = 0; i<this.matriz[fila].length;i++){
-            suma += matriz[fila][i];
-        }
-        
-        return suma;
-        
+            for(int i = 0; i<matriz.length;i++){
+                suma += matriz[i][columna];
+            }
+            
+            return suma;
+            
         }
         
         return 0;
     }
     
-    public void imprimirMatriz(){
-        for(int i = 0;i<this.matriz.length;i++){
-            for(int j = 0; j<this.matriz[i].length;j++){
+    
+    //Metodo para imprimir la matriz
+    public void imprimirMatriz() {
+        for (int i = 0; i < this.matriz.length; i++) {
+            for (int j = 0; j < this.matriz[i].length; j++) {
                 System.out.print("[" + matriz[i][j] + "]  ");
             }
             System.out.println("");
