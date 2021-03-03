@@ -71,6 +71,18 @@ public class CuadradoMagico {
         return 0;
     }
     
+    //Metodo para sumar la diagonal principal 
+    public int diagonalPrincipal(){
+        
+        int suma=0;
+        
+        for(int i = 0 ,j=0;i<matriz.length;i++,j++){
+            suma += matriz[i][j];
+        }
+        
+        return suma;
+    }
+    
     
     //Metodo para imprimir la matriz
     public void imprimirMatriz() {
