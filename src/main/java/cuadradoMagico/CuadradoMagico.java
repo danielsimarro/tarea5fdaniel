@@ -83,6 +83,17 @@ public class CuadradoMagico {
         return suma;
     }
     
+    //Metodo para sumar la diagonal secundaria 
+    public int diagonalSecundaria(){
+        
+        int suma=0;
+        
+        for(int i = 2 ,j=0;j<matriz.length;i--,j++){
+            suma += matriz[i][j];
+        }
+        
+        return suma;
+    }
     
     //Metodo para imprimir la matriz
     public void imprimirMatriz() {
