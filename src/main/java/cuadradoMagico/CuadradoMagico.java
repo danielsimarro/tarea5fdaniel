@@ -5,6 +5,7 @@
  */
 package cuadradoMagico;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -103,5 +104,49 @@ public class CuadradoMagico {
             }
             System.out.println("");
         }
+    }
+    
+    //Metodo que compruebe si la suma de todas las filas y columnas son iguales
+    public  Boolean cuadradoMagicoFilaColumna(){
+        
+        ArrayList<Integer> lista = new ArrayList<Integer>();
+        
+        Integer sumaFila = 0;
+        Integer sumaColumna = 0;
+        
+        for (int i = 0; i < this.matriz.length; i++) {
+            
+            sumaFila = sumaFila(i);
+            sumaColumna = sumarColumna(i);
+            
+            lista.add(sumaFila);
+            lista.add(sumaColumna);
+        }
+        
+        for(Integer numero: lista){
+            if(!numero.equals(lista.get(0))){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public boolean cuadradoMagico(){
+        
+        int sumaFila = 0;
+        int sumaDiagonalP = 0;
+        int sumaDiagonalS = 0;
+        
+        if(cuadradoMagicoFilaColumna()){
+            sumaFila = sumaFila(0);
+            sumaDiagonalP = diagonalPrincipal();
+            sumaDiagonalS = diagonalSecundaria();
+            
+            if(sumaFila == sumaDiagonalP && sumaDiagonalP ==  sumaDiagonalS ){
+                return true;
+            }
+        }
+        
+        return false;
     }
 }
