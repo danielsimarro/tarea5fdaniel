@@ -107,7 +107,7 @@ public class CuadradoMagico {
     }
     
     //Metodo que compruebe si la suma de todas las filas y columnas son iguales
-    public  Boolean cuadradoMagicoFilaColumna(){
+    public  Boolean cuadradoMagico(){
         
         ArrayList<Integer> lista = new ArrayList<Integer>();
         
@@ -121,7 +121,11 @@ public class CuadradoMagico {
             
             lista.add(sumaFila);
             lista.add(sumaColumna);
+            
         }
+        
+        lista.add(diagonalPrincipal());
+        lista.add(diagonalSecundaria());
         
         for(Integer numero: lista){
             if(!numero.equals(lista.get(0))){
@@ -131,7 +135,7 @@ public class CuadradoMagico {
         return true;
     }
     
-    public boolean cuadradoMagico(){
+    /*public boolean cuadradoMagico(){
         
         int sumaFila = 0;
         int sumaDiagonalP = 0;
@@ -148,5 +152,5 @@ public class CuadradoMagico {
         }
         
         return false;
-    }
+    }*/
 }
