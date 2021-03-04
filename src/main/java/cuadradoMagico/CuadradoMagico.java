@@ -39,7 +39,7 @@ public class CuadradoMagico {
     //Metodo para sumar la fila indicada de la matriz
     public int sumaFila(int fila) {
 
-        if (fila >= 0 && fila < 3) {
+        if (fila >= 0 && fila < matriz.length) {
 
             int suma = 0;
 
@@ -57,7 +57,7 @@ public class CuadradoMagico {
     //Metodo para sumar la columna indcada de la matriz
     public int sumarColumna(int columna){
     
-        if(columna >= 0 && columna < 3){
+        if(columna >= 0 && columna < matriz.length){
            
             int suma = 0;
             
@@ -89,7 +89,7 @@ public class CuadradoMagico {
         
         int suma=0;
         
-        for(int i = 2 ,j=0;j<matriz.length;i--,j++){
+        for(int i = matriz.length-1 ,j=0;j<matriz.length;i--,j++){
             suma += matriz[i][j];
         }
         
@@ -109,18 +109,14 @@ public class CuadradoMagico {
     //Metodo que compruebe si la suma de todas las filas y columnas son iguales
     public  Boolean cuadradoMagico(){
         
-        ArrayList<Integer> lista = new ArrayList<Integer>();
+        ArrayList<Integer> lista = new ArrayList<>();
         
-        Integer sumaFila = 0;
-        Integer sumaColumna = 0;
         
         for (int i = 0; i < this.matriz.length; i++) {
             
-            sumaFila = sumaFila(i);
-            sumaColumna = sumarColumna(i);
             
-            lista.add(sumaFila);
-            lista.add(sumaColumna);
+            lista.add(sumaFila(i));
+            lista.add(sumarColumna(i));
             
         }
         
